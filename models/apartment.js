@@ -88,5 +88,9 @@ const ApartmentSchema = new Schema({
   reviews: [Schema.Types.Mixed],
 });
 
-const Apartment = mongoose.model("Apartment", ApartmentSchema);
+const Apartment = mongoose.model(
+  "listingsAndReviews",
+  ApartmentSchema,
+  "listingsAndReviews"
+);
 module.exports = Apartment;

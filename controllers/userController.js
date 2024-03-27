@@ -13,7 +13,7 @@ const getAllUsers = (req, res) => {
     });
 };
 
-const getUserById = (req, res) => {
+const getUserById = async (req, res) => {
   const id = req.params.id;
   User.findById(id)
     .then((result) => {
@@ -80,10 +80,6 @@ const renderUserCreatePage = (req, res) => {
   res.render("adduser", { title: "Add-User" });
 };
 
-const renderNotFoundPage = (req, res) => {
-  res.render("404", { title: "NotFound" });
-};
-
 module.exports = {
   getAllUsers,
   getUserById,
@@ -93,5 +89,4 @@ module.exports = {
   deleteUser,
   redirectUserPage,
   renderUserCreatePage,
-  renderNotFoundPage,
 };

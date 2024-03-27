@@ -14,12 +14,5 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-UserSchema.statics.createFromMongoDB = function (userData) {
-  return new this({
-    name: userData.name,
-    email: userData.email,
-  });
-};
-
 const User = mongoose.model("User", UserSchema);
 module.exports = User;
